@@ -10,7 +10,7 @@
 
 **Function Name:** swapExactTokensForTokens
 
-**Block Explorer Link:** [UniswapV2Router02 Contract on Etherscan](https://etherscan.io/address/0x7a250d5630b4cf539739df2c5dacab1fdd68c4f0#code)
+**Block Explorer Link:** [UniswapV2Router02 Contract on Etherscan](https://etherscan.io/address/0x3e445e3280c5747a188db8d0ab7762838a50e4ff#code)
 
 **Function Code:**
 ```solidity
@@ -35,10 +35,10 @@ function swapExactTokensForTokens(
 
 ## Explanation
 **Purpose:**
-The swapExactTokensForTokens function facilitates the swapping of a specific amount of one token for another token within the Uniswap V2 protocol. This function ensures that the user receives at least a minimum amount of the output token.
+The `swapExactTokensForTokens` function facilitates the swapping of a specific amount of one token for another token within the Uniswap V2 protocol. This function ensures that the user receives at least a minimum amount of the output token.
 
 **Detailed Usage:**
-In the provided code snippet, the call method is not directly visible. However, the _swap function, which is called within swapExactTokensForTokens, typically uses low-level calls to interact with the Uniswap pairs. Here is a deeper look into the _swap function where the low-level call method is used:
+In the provided code snippet, the `call` method is not directly visible. However, the `_swap` function, which is called within `swapExactTokensForTokens`, typically uses low-level calls to interact with the Uniswap pairs. Here is a deeper look into the `_swap` function where the low-level `call` method is used:
 
 ```solidity
 function _swap(uint[] memory amounts, address[] memory path, address _to) internal virtual {
@@ -55,7 +55,7 @@ function _swap(uint[] memory amounts, address[] memory path, address _to) intern
 }
 ```
 
-In this `_swap` function, IUniswapV2Pair(...).swap(...) indirectly uses the call method to execute the token transfer on the Uniswap pair contract.
+In this `_swap` function, `IUniswapV2Pair(...).swap(...)` indirectly uses the call method to execute the token transfer on the Uniswap pair contract.
 
 **Impact:**
 The `swapExactTokensForTokens` function is crucial for the functionality of the Uniswap protocol as it allows users to swap tokens with a guarantee of receiving a minimum amount. The use of low-level calls in the _swap function ensures efficient interaction with the pair contracts, enabling the token swaps to happen seamlessly. This contributes significantly to the protocol's liquidity and user experience by providing reliable and secure token exchange mechanisms.
