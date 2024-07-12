@@ -28,3 +28,12 @@ function swapExactTokensForTokens(
     );
     _swap(amounts, path, to);
 }
+
+**Used Encoding/Decoding or Call Method:** call
+
+Explanation
+Purpose:
+The swapExactTokensForTokens function facilitates the swapping of a specific amount of one token for another token within the Uniswap V2 protocol. This function ensures that the user receives at least a minimum amount of the output token.
+
+Detailed Usage:
+In the provided code snippet, the call method is not directly visible. However, the _swap function, which is called within swapExactTokensForTokens, typically uses low-level calls to interact with the Uniswap pairs. Here is a deeper look into the _swap function where the low-level call method is used:
